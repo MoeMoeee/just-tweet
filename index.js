@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
     res.render('home', {tweets})
 })
 
-app.get('/tweet', (req, res) => {
-  res.render('Tweet')
+app.get('/newtweet', (req, res) => {
+  res.render('newtweet')
 })
 
 app.listen(port, () => {

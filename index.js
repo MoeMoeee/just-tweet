@@ -5,6 +5,7 @@ const path = require('path')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
+app.use("/public", express.static('./public/'));
 
 // /index - display all the tweets
 
@@ -16,16 +17,16 @@ const tweets = [
   tweet: 'The weather is good today!'
 },
 {  
-  username: 'moemoe',
-  tweet: 'The weather is good today!'
+  username: 'lordtahdus',
+  tweet: 'I love my classes'
 },
 {  
-  username: 'moemoe',
-  tweet: 'The weather is good today!'
+  username: 'Edward Patrick',
+  tweet: 'Laughter is the best medicine, except when you have diarrhea, then Pepto is definitely the best medicine.'
 },
 {  
-  username: 'moemoe',
-  tweet: 'The weather is good today!'
+  username: 'Dewaine',
+  tweet: 'It was the best of vibes, it was the '
 }
 
 ]

@@ -28,17 +28,26 @@ const tweets = [
 },
 {  
   username: 'Dewaine',
-  tweet: 'It was the best of vibes, it was the '
+  tweet: 'It was the best of vibes!'
 }
 
 ]
 
-app.get('/', (req, res) => {
-    res.render('home', {tweets})
+
+//get post request
+app.post('/', (req, res) => {
+  const {username, tweet} = req.body //get req from form submitted
+  console.log(req.body);
+  tweets.push({username, tweet})
+  res.send('Sent')
 })
 
 app.get('/newtweet', (req, res) => {
-  res.render('newtweet')
+  res.render('newtweet');
+})
+
+app.get('/', (req, res) => {
+  res.render('home', {tweets})
 })
 
 app.listen(port, () => {

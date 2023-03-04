@@ -8,7 +8,12 @@
 </head>
 <body>
     <!-- display all the tweets -->
-    <h1>Home Page</h1>
-    <h2>Welcome</h2>
+    <h1>Just Tweet</h1>
+
+    <ul>
+        <% for(let t of tweets) {%>
+            <li> <%= t.tweet %> - <b> <%= t.username %> </b> </li>
+        <% } %>
+    </ul>
 </body>
 </html>

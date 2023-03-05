@@ -1,13 +1,17 @@
 <%- include('partials/head') %>
 
 <body>
+
+
     <!-- display all the tweets -->
-    <h1 class="text-center">Just Tweet</h1>
+    <h1 class="text-center">Trending</h1>
   
     <ul>
         <% for(let t of tweets) {%>
             <li> <%= t.tweet %> - <b> <%= t.username %> </b> </li>
         <% } %>
     </ul>
+
+    <a class="ms-5 btn btn-warning" href="newtweet" role="button">New Tweet</a>
 
 <%- include('partials/footer') %>

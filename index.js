@@ -9,6 +9,12 @@ app.use("/public", express.static('./public/'));
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+// Middleware to handle errors
+app.use((err, req, res, next) => {
+  console.error(err)
+  res.status(500).send('Something went wrong!')
+})
+
 // /index - display all the tweets
 
 // tweets
@@ -37,9 +43,17 @@ const tweets = [
 //get post request
 app.post('/', (req, res) => {
   const {username, tweet} = req.body //get req from form submitted
-  console.log(req.body);
-  tweets.push({username, tweet})
-  res.send('Sent')
+  
+  if (!username || !tweet) {
+    return res.status(400).send('Username and tweet are required!')
+  }
+  
+  try {
+    tweets.push({username, tweet})
+    res.redirect('/')
+  } catch (error) {
+    next(error)
+  }
 })
 
 app.get('/newtweet', (req, res) => {

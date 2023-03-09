@@ -2,13 +2,15 @@
 
 <body>
 
-
     <!-- display all the tweets -->
     <h1 class="text-center">Trending</h1>
-  
+
     <ul>
         <% for(let t of tweets) {%>
             <li> <%= t.tweet %> - <b> <%= t.username %> </b> </li>
+            <% if (t.image) { %>
+              <img src="/uploads/<%= t.image %>" alt="Tweet Image" width="900" height="800">
+            <% } %>
         <% } %>
     </ul>
 

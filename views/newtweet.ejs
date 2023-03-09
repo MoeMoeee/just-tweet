@@ -2,7 +2,7 @@
 
     <!-- display all the tweets -->
     <h1 class="text-center">New Tweet</h1>
-    <form class="ms-3" action="/" method="post">
+    <form class="ms-3" action="/" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter your username:...">
@@ -11,7 +11,16 @@
           <label for="newtweet">New Tweet</label>
           <input type="text" class="form-control" id="newtweet" name="tweet" placeholder="Share your thoughts...">
         </div>
+
+        <div>
+          <label for="image">Image:</label>
+          <input type="file" id="image" name="image">
+        </div>
+      
         <button type="submit" class="ml-5 mt-5 btn btn-primary">Tweet</button>
-    </form>
+    </form> 
+
+
+
 
 <%- include('partials/footer') %>

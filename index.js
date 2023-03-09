@@ -52,7 +52,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
 //get post request
 app.post('/', upload.single('image'),(req, res) => {
   const {username, tweet} = req.body //get req from form submitted
